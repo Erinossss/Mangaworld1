@@ -4,7 +4,7 @@
 {% block head_title %}{{ block.super}} - Login {% endblock head_title %}
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-4 text-center">
+    <div class="col-4 ">
         <h2><a href="/"><img  style="width: 4rem;"  src="https://www.mangaworld.io/public/assets/svg/MangaWorldLogo.svg?3"> </a>Accedi</h2>
         <form class="" action="{% url 'login' %}" method="POST" novalidate>
             {% csrf_token %}
