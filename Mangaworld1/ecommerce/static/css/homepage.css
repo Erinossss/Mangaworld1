@@ -15,7 +15,11 @@ h3{font-size:1.75rem;}
         h3,p{orphans:3;widows:3;}
         h3{page-break-after:avoid;}
 }
-/*! CSS Used from: http://gambolthemes.net/workwise-new/css/line-awesome.css */
+body {
+  background-image: url("https://www.animeworld.tv/sfondi/Natale2020/YurikoWallpaperNatale2020_06.png");
+  background-repeat: no-repeat, repeat;
+  background-color: #cccccc;
+}/*! CSS Used from: http://gambolthemes.net/workwise-new/css/line-awesome.css */
 .la{display:inline-block;font:normal normal normal 16px/1 "LineAwesome";font-size:inherit;text-decoration:inherit;text-rendering:optimizeLegibility;text-transform:none;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;}
 .la-bookmark:before{content:"\f14f";}
 .la-ellipsis-v:before{content:"\f1c4";}
