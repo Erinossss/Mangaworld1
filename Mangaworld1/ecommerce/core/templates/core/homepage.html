@@ -47,10 +47,10 @@
             </nav>
 
             <br>
-            <a href="{% url 'item-page' %}" class="btn btn-info" >Vedi tutte le sneakers in vendita</a>
+            <a href="{% url 'item-page' %}" class="btn btn-info" >Vedi tutti i manga in vendita</a>
             <br>
             <br>
-            <h2>I migliori prezzi per Sneakers nuove</h2>
+            <h2>I migliori prezzi per manga nuovi</h2>
             <br>
             {% if not convenientinew_list %}
                 <h4 class="text-muted">Ci dispiace! Non ci sono articoli che soddisfano la richiesta!</h4>
@@ -106,7 +106,7 @@
 
             </section>
             <br>
-            <h2>I migliori prezzi per Sneakers usate </h2>
+            <h2>I migliori prezzi per manga usati </h2>
             <br>
             {% if not convenientiused_list %}
                 <h4 class="text-muted">Ci dispiace! Non ci sono articoli che soddisfano la richiesta!</h4>
@@ -125,7 +125,7 @@
                                         <img src="{{ item.immagine.url }}" class="card-img-top" width="100" height="200" >
                                     {% endif %}
                                     <a href="{{ item.get_absolute_url }}">
-                                        <div class="mask rgba-white-slight"></div>
+                                        <div class="mask rgba-red-slight"></div>
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
