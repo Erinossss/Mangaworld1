@@ -158,8 +158,7 @@ class AggiungiItem(CreateView):
     tramite la CreateView di Django, permette la creazione dell'item
     '''
     model = Item
-    fields = ["nome", "prezzo", "categoria", "descrizione", "immagine", "tagliaEU",
-              "condizioni"]
+    fields = ["nome", "prezzo", "categoria", "descrizione", "immagine", "condizioni"]
     template_name = "core/aggiungi_prodotto.html"
 
     def form_valid( self, form ):
