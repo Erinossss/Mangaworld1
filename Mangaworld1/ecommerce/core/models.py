@@ -8,14 +8,14 @@ from django.utils import timezone
 
 CATEGORY_CHOICES = (
     ('S', 'Shojo'),
-    ('A', 'Adidas'),
-    ('J', ' Air Jordan'),
-    ( 'L', 'Luxury Brands'),
-    ('O',  'Altri Brands')
+    ('SH', 'Shonen'),
+    ('SE', ' Seinen'),
+    ( 'I', 'Isekai'),
+    ('A',  'Altro')
 )
 
 LABEL_CHOICES = (
-    ('N', 'Deadstock(New)'),
+    ('N', 'New'),
     ('U', 'Used')
 )
 
@@ -30,7 +30,6 @@ class Item(models.Model):
     slug = AutoSlugField(populate_from='nome', unique=True)   #chiave primaria
     descrizione = models.TextField()
     immagine = models.ImageField()
-    tagliaEU = models.FloatField(validators = [MinValueValidator(35.0), MaxValueValidator(47.0)],)
     condizioni = models.CharField(choices=LABEL_CHOICES, max_length=1)
     autore_vendita = models.ForeignKey(User, on_delete=models.CASCADE, related_name="scarpe")
     data = models.DateTimeField(auto_now_add=True) # data in cui avviene l'ordine
