@@ -15,7 +15,6 @@
             <thead>
             <tr>
                 <th scope="col"> Nome</th>
-                <th scope="col"> Taglia</th>
                 <th scope="col"> Condizione</th>
                 <th scope="col"> Prezzo</th>
             </tr>
@@ -25,7 +24,6 @@
                 <tr>
                     <td><a href="{{ order_item.product.get_absolute_url }}" >{{ order_item.product.nome}}</a></td>
 
-                    <td>{{ order_item.product.tagliaEU }}</td>
                     <td>{% if order_item.product.condizioni == 'U' %}
                         <h6  style="color: red"> {{ order_item.product.get_condizioni_display }} </h6>
                     {% else %}

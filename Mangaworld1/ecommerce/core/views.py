@@ -230,10 +230,10 @@ class ItemDelete(DeleteView):
 
 class ItemChange(UpdateView):
     '''
-    Modifica il nome, la taglia e il prezzo  dell'item
+    Modifica il nome e il prezzo  dell'item
     '''
     model = Item
-    fields = ('nome','prezzo','tagliaEU')
+    fields = ('nome','prezzo',)
     template_name = 'core/modifica_item.html'
 
     def dispatch(self, request, *args, **kwargs):
