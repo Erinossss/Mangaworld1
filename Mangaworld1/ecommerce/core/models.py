@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 CATEGORY_CHOICES = (
-    ('N', 'Nike'),
+    ('S', 'Shojo'),
     ('A', 'Adidas'),
     ('J', ' Air Jordan'),
     ( 'L', 'Luxury Brands'),

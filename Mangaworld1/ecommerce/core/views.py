@@ -60,7 +60,6 @@ def homeview(request):
                         racc.prezzo = racc.sum_prezzo/racc.num_item
                         item.consigliato = True
                         item.save()
-                #print(item.product.tagliaEU)
                 #print(item.product.categoria)
                 #print(item.product.condizioni)
             for racc in item_consigliati:
