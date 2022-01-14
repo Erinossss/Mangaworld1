@@ -70,7 +70,6 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'user_profile' username=request.user.username %}">Profilo</a>
-                            <a  class="dropdown-item" href="{% url 'order-summary' %}"> Il mio carrello </a>
                             <a class="dropdown-item" href="{% url 'address-page'  username=request.user.username %}">I miei indirizzi</a>
                             <a  class="dropdown-item" href="{% url 'user-vendite' username=request.user.username %}"> Le mie vendite</a>
                             <a  class="dropdown-item" href="{% url 'acquisti'%}"> I miei acquisti</a>
@@ -99,7 +98,7 @@
             </form>
 
         </div>
-    <a class="fa fa-shopping-cart " aria-expanded="true" href="{% url 'order-summary' %}" style="font-size:36px;color: black" ></a>
+    <a class="fa fa-shopping-cart " href="{% url 'order-summary' %}" style="font-size:36px;color: black" ></a>
     </div>
 </nav>
 
