@@ -21,7 +21,7 @@
 
 
         <!-- Card Body -->
-        <div class="card-body d-inline ">
+        <div class="card-body ">
             <h3 class=" mb-2">Venditore: <strong>
                 <a href="{% url 'user_profile' item.autore_vendita %}"  class="dark-grey-text"> @{{item.autore_vendita}} </a>
             </strong>  || Categoria: <strong><a href="{% url 'categorie' item.categoria %}"  class="dark-grey-text">{{ item.get_categoria_display}} </a> </strong></h3>
