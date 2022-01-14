@@ -232,7 +232,7 @@ class ItemChange(UpdateView):
     Modifica il nome e il prezzo  dell'item
     '''
     model = Item
-    fields = ('nome','prezzo',)
+    fields = ('nome','prezzo','categoria')
     template_name = 'core/modifica_item.html'
 
     def dispatch(self, request, *args, **kwargs):
