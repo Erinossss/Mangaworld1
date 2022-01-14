@@ -99,6 +99,9 @@
         a:hover{color:initial;}
         .job-status-bar{border-top:1px solid #e5e5e5;}
         .job-dt li a{background-color:#51a5fb;}
+        .centrare {
+   text-align: center;
+}
         /*! CSS Used from: http://gambolthemes.net/workwise-new/css/responsive.css */
         @media (max-width: 576px){
             .like-com li{margin-right:5px;}
