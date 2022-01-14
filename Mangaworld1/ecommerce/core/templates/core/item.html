@@ -21,7 +21,7 @@
 
 
         <!-- Card Body -->
-        <div class="card-body d-inline " style="align-items: center">
+        <div class="card-body d-inline ">
             <h3 class=" mb-2">Venditore: <strong>
                 <a href="{% url 'user_profile' item.autore_vendita %}"  class="dark-grey-text"> @{{item.autore_vendita}} </a>
             </strong>  || Categoria: <strong><a href="{% url 'categorie' item.categoria %}"  class="dark-grey-text">{{ item.get_categoria_display}} </a> </strong></h3>
@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="container-fluid">
                         <div class="wrapper row">
-                            <div class="preview col-md-3 " >
+                            <div class="preview col-md-3 " style="align-items: center">
 
                                 <ul class="preview-thumbnail nav nav-tabs">
                                     <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{item.immagine.url }}"  width="200" height="300" /></a></li>
