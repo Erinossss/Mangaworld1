@@ -25,7 +25,7 @@ LABEL_CHOICES = (
 # Create your models here.
 class Item(models.Model):
     nome = models.CharField(max_length=100)
-    prezzo = models.FloatField(validators = [MinValueValidator(0.0)])
+    prezzo = models.FloatField(validators = [MinValueValidator(0.00)])
     categoria = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     slug = AutoSlugField(populate_from='nome', unique=True)   #chiave primaria
     descrizione = models.TextField()
