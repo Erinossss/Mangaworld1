@@ -228,7 +228,7 @@
 
 
             {% if is_paginated %}
-                <nav class="d-flex justify-content-center wow fadeIn">
+                <nav class="d-flex wow fadeIn">
                     <ul class="pagination pg-blue">
 
                         {% if page_obj.has_previous %}
@@ -241,7 +241,7 @@
                         {% endif %}
 
                         <li class="page-item active">
-                            <a class="page-link" href="?page={{ page_obj.number }}"=>{{ page_obj.number }}
+                            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
