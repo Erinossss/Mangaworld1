@@ -20,7 +20,7 @@ from accounts.models import UserProfile
 # def homepage(request):
 #   return render(request, 'core/homepage.html')
 from core.forms import CheckoutForm
-from core.models import Item, OrderItem, Order, ShoppingAddress, Payment, ProdottoConsigliato
+from core.models import Item, OrderItem, Order, ShoppingAddress, Payment, ItemConsigliato
 
 #def homepage (request):
 #return render(request ,'core/homepage.html')
@@ -41,7 +41,7 @@ def homeview(request):
     #page_obj = paginator.get_page(page_number)
     #print(context)
     if(request.user.is_authenticated):
-        item_consigliati = ProdottoConsigliato.objects.filter( user = request.user)
+        item_consigliati = ItemConsigliato.objects.filter( user = request.user)
         for racc in item_consigliati:
             racc.save()
         if item_consigliati.exists() :
@@ -71,7 +71,7 @@ def homeview(request):
 
 
         else:
-            item_consigliati = ProdottoConsigliato.objects.create(user = request.user)
+            item_consigliati = ItemConsigliato.objects.create(user = request.user)
             order_qs = Order.objects.filter(user=request.user, is_ordered=True, )
             order_item_qs = OrderItem.objects.filter(user=request.user, is_ordered=True, consigliato=False)
 
@@ -93,7 +93,7 @@ def homeview(request):
     convenientinew_list = []
     convenientiused_list = []
     if (request.user.is_authenticated):
-        item_consigliati = ProdottoConsigliato.objects.filter(user=request.user)
+        item_consigliati = ItemConsigliato.objects.filter(user=request.user)
         for it in object_list:
             #gli item consigliati derivano dalla combinazione della condizione con il prezzo
             for consigliato in item_consigliati:
