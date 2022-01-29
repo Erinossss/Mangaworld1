@@ -114,9 +114,9 @@ def homeview(request):
 
                 #recommendation_list.append(it)
     for it in object_list:
-        if (it.prezzo <= 300 and it.condizioni == 'N'):
+        if (it.prezzo <= 6 and it.condizioni == 'N'):
             convenientinew_list.append(it)
-        if (it.prezzo <= 300 and it.condizioni == 'U'):
+        if (it.prezzo <= 6 and it.condizioni == 'U'):
             convenientiused_list.append(it)
 
 
