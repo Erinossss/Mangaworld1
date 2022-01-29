@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Recommendation',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('items', models.ManyToManyField(to='core.ItemConsigliato')),
+                ('items', models.ManyToManyField(to='core.ProdottoConsigliato')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

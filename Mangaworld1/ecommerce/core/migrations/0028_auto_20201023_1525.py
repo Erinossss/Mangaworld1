@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RenameModel(
             old_name='ItemConsigliati',
-            new_name='ItemConsigliato',
+            new_name='ProdottoConsigliato',
         ),
         migrations.AlterModelOptions(
             name='itemconsigliato',

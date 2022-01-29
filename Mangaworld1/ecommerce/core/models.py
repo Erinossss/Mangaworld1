@@ -130,7 +130,7 @@ class Payment(models.Model):
         return self.user.username
 
 
-class ItemConsigliato(models.Model):
+class ProdottoConsigliato(models.Model):
     num_item = models.PositiveIntegerField(default=0)
     condizioneN = models.PositiveIntegerField(default=0)
     condizioneU = models.PositiveIntegerField(default=0)

@@ -23,7 +23,6 @@ class CoreCase(TestCase):
                                         categoria="A",
                                         descrizione="Descrizione Test",
                                         immagine="n",
-                                        tagliaEU="42",
                                         condizioni='N',
                                         autore_vendita=self.user)
 
@@ -60,7 +59,6 @@ class CoreCase(TestCase):
         self.assertFormError(response, 'form', 'categoria', 'Questo campo è obbligatorio.')
         self.assertFormError(response, 'form', 'descrizione', 'Questo campo è obbligatorio.')
         self.assertFormError(response, 'form', 'immagine', 'Questo campo è obbligatorio.')
-        self.assertFormError(response, 'form', 'tagliaEU', 'Questo campo è obbligatorio.')
         self.assertFormError(response, 'form', 'condizioni', 'Questo campo è obbligatorio.')
 
         self.assertTemplateUsed(response, 'core/aggiungi_prodotto.html')
@@ -69,7 +67,7 @@ class CoreCase(TestCase):
         response = self.client.post('/nuovo-item/',
                                     {'nome': 'J4', 'prezzo': '50', 'categoria': 'A', 'descrizione': 'v',
                                      'immagine': 's',
-                                     'tagliaEU': '45', 'condizioni': 'U'})
+                                     'condizioni': 'U'})
         self.assertTemplateUsed(response,  'core/aggiungi_prodotto.html')
         self.assertEqual(response.status_code, 200)
 
@@ -82,9 +80,8 @@ class CoreCase(TestCase):
         response = self.client.post('/item/' + str(self.item.id) +'/modifica/', {})
         self.assertFormError(response, 'form', 'nome', 'Questo campo è obbligatorio.')
         self.assertFormError(response, 'form', 'prezzo', 'Questo campo è obbligatorio.')
-        self.assertFormError(response, 'form', 'tagliaEU', 'Questo campo è obbligatorio.')
         response = self.client.post('/item/' + str(self.item.id) + '/modifica/',
-                                    {'nome':'mod' , 'prezzo':'50' , 'tagliaEU':'38'})
+                                    {'nome':'mod' , 'prezzo':'50' })
         self.assertRedirects(response, '/user/' + self.user.username + '/')
         self.client.logout()
 
