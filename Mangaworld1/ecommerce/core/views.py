@@ -145,7 +145,7 @@ def userProfileView (request, username ):
         return altriuserProfileView(request, username)
     user = get_object_or_404(User, username=username)
     items_utente = Item.objects.filter(autore_vendita=user.pk , ordered=False).order_by("-pk")
-    paginator = Paginator(items_utente, 4)  # Show 4 contacts per page.
+    paginator = Paginator(items_utente, 3)  # Show 4 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {"user": user, "items_utente": page_obj, "page_obj": page_obj}
@@ -195,7 +195,7 @@ def altriuserProfileView(request, username, ):
     user = get_object_or_404(User, username=username)
 
     items_utente = Item.objects.filter(autore_vendita=user.pk, ordered=False).order_by("-pk")
-    paginator = Paginator(items_utente, 4)  # Show 3 contacts per page.
+    paginator = Paginator(items_utente, 3)  # Show 3 contacts per page.
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
