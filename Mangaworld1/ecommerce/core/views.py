@@ -98,7 +98,7 @@ def homeview(request):
             #gli item consigliati derivano dalla combinazione della condizione con il prezzo
             for consigliato in item_consigliati:
                 if(it.autore_vendita != request.user):
-                    if((it.prezzo>=consigliato.prezzo and it.prezzo<=consigliato.prezzo + 100) or (it.prezzo<=consigliato.prezzo and it.prezzo >=consigliato.prezzo -100)):
+                    if((it.prezzo>=consigliato.prezzo and it.prezzo<=consigliato.prezzo + 10) or (it.prezzo<=consigliato.prezzo and it.prezzo >=consigliato.prezzo -10)):
                         if((consigliato.condizioneN == consigliato.condizioneU) and (consigliato.condizioneN >= 2 or consigliato.condizioneU >= 2)):
                             if (it not in recommendation_list):
                                  recommendation_list.append(it)
