@@ -65,7 +65,7 @@ class CoreCase(TestCase):
         self.assertEqual(response.status_code, 200)  # verifica per capire se il template utilizzato è quello corretto
 
         response = self.client.post('/nuovo-item/',
-                                    {'nome': 'J4', 'prezzo': '50', 'categoria': 'A', 'descrizione': 'v',
+                                    {'nome': 'J4', 'prezzo': '50', 'categoria': 'S', 'descrizione': 'v',
                                      'immagine': 's',
                                      'condizioni': 'U'})
         self.assertTemplateUsed(response,  'core/aggiungi_prodotto.html')
