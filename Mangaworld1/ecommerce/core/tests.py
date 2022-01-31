@@ -74,8 +74,8 @@ class CoreCase(TestCase):
     def test_item_change(self):
         # con utente autenticato
         self.client.login(**self.credential)
-        print('V')
         response = self.client.get('/item/' + str(self.item.id) + '/modifica/')
+        print(response)
         self.assertEqual(response.status_code, 200)
         response = self.client.post('/item/' + str(self.item.id) +'/modifica/', {})
         self.assertFormError(response, 'form', 'nome', 'Questo campo è obbligatorio.')
