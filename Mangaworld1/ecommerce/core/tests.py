@@ -66,8 +66,7 @@ class CoreCase(TestCase):
 
         response = self.client.post('/nuovo-item/',
                                     {'nome': 'J4', 'prezzo': '50', 'categoria': 'S', 'descrizione': 'v',
-                                     'immagine': 's',
-                                     'condizioni': 'U'})
+                                     'immagine': 's','condizioni': 'U'})
         self.assertTemplateUsed(response,  'core/aggiungi_prodotto.html')
         self.assertEqual(response.status_code, 200)
 
@@ -81,7 +80,7 @@ class CoreCase(TestCase):
         self.assertFormError(response, 'form', 'nome', 'Questo campo è obbligatorio.')
         self.assertFormError(response, 'form', 'prezzo', 'Questo campo è obbligatorio.')
         response = self.client.post('/item/' + str(self.item.id) + '/modifica/',
-                                    {'nome':'mod' , 'prezzo':'50' })
+                                    {'nome':'mod' ,'prezzo':'50','categoria':'A','descrizione':'c','condizione':'U'})
         self.assertRedirects(response, '/user/' + self.user.username + '/')
         self.client.logout()
 
