@@ -10,7 +10,7 @@ CATEGORY_CHOICES = (
     ('S', 'Shojo'),
     ('SH', 'Shonen'),
     ('SE', ' Seinen'),
-    ( 'I', 'Isekai'),
+    ('I', 'Isekai'),
     ('A',  'Altro')
 )
 
@@ -31,7 +31,7 @@ class Item(models.Model):
     descrizione = models.TextField()
     immagine = models.ImageField()
     condizioni = models.CharField(choices=LABEL_CHOICES, max_length=1)
-    autore_vendita = models.ForeignKey(User, on_delete=models.CASCADE, related_name="scarpe")
+    autore_vendita = models.ForeignKey(User, on_delete=models.CASCADE, related_name="manga")
     data = models.DateTimeField(auto_now_add=True) # data in cui avviene l'ordine
     ordered = models.BooleanField(default=False)  # identifica se l'item è  stato acquistato
     compratore = models.CharField (null=True,max_length=50) #identifica chi ha comprato l'item
