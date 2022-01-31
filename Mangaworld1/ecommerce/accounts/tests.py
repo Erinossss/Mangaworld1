@@ -12,7 +12,7 @@ class LogInTest(TestCase):
     L'utente viene creato con questa funzione di setup
     '''
     def setUp(self):
-        self.dummy_user = User.objects.create_user(username='dummy', password='nothings', email='dummy@dummy.com')
+        self.pippo_user = User.objects.create_user(username='pippo', password='topolino', email='pippo@pippo.com')
 
     '''
     Test se tutti i campi per la registrazione sono obbligatori
@@ -29,7 +29,7 @@ class LogInTest(TestCase):
         self.assertTemplateUsed(response, 'accounts/registrazione.html')
         self.assertEqual(response.status_code, 200) # codice 200: la richiesta ha avuto successso
 
-        response = self.client.post('/accounts/registrazione/', {'username':self.dummy_user.username, 'email':self.dummy_user.email,
+        response = self.client.post('/accounts/registrazione/', {'username':self.pippo_user.username, 'email':self.pippo_user.email,
                                                                  'password1':'ciaoone', 'password2':'wrong'})
 
         self.assertFormError(response, 'form', 'password2', 'I due campi password non corrispondono.')
@@ -44,7 +44,7 @@ class LogInTest(TestCase):
     '''
     def test_login(self):
         fake_credential = {'username':'ciao', 'password':'ciao'}
-        true_credential = {'username':'dummy', 'password':'nothings'}
+        true_credential = {'username':'pippo', 'password':'topolino'}
         t_cred = self.client.login(**true_credential)
         f_cred = self.client.login(**fake_credential)
 
