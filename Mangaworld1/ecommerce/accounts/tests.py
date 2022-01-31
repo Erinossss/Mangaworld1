@@ -44,7 +44,7 @@ class LogInTest(TestCase):
     '''
     def test_login(self):
         fake_credential = {'username':'ciao', 'password':'ciao'}
-        true_credential = {'username':'dumm', 'password':'nothing'}
+        true_credential = {'username':'dummy', 'password':'nothings'}
         t_cred = self.client.login(**true_credential)
         f_cred = self.client.login(**fake_credential)
 
