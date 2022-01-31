@@ -16,8 +16,8 @@ from core.models import Item, ShoppingAddress
 class CoreCase(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create_user(username='dummy', email='dummy@dummy.com', password='dummypassword')
-        self.credential = {'username': 'dummy', 'password': 'dummypassword'}
+        self.user = User.objects.create_user(username='pippo', email='pippo@pippo.com', password='topolino')
+        self.credential = {'username': 'pippo', 'password': 'topolino'}
         self.item = Item.objects.create(nome="Nome Test",
                                         prezzo="30",
                                         categoria="S",
@@ -27,14 +27,14 @@ class CoreCase(TestCase):
                                         autore_vendita=self.user)
 
         self.address = ShoppingAddress.objects.create(user=self.user,
-                                        città="Del Sole",
+                                        città="Monte sant'angelo",
                                         stato="O",
-                                        cap="45667",
+                                        cap="41127",
                                         via="n",
                                         interno="3",
                                         note="ciao")
-        self.user2 = User.objects.create_user(username='dummy2', email='dummy@dummy.com', password='dummypassword')
-        self.credential2 = {'username': 'dummy2', 'password': 'dummypassword'}
+        self.user2 = User.objects.create_user(username='pippo2', email='pippo@pippo2.com', password='topolino')
+        self.credential2 = {'username': 'pippo2', 'password': 'topolino'}
 
 
 

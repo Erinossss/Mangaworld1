@@ -43,10 +43,9 @@ class LogInTest(TestCase):
     Poi inserisco  delle credenziali false per vedere se il sistema rifuta il login
     '''
     def test_login(self):
-        fake_credential = {'username':'ciao', 'password':'ciao'}
         true_credential = {'username':'pippo', 'password':'topolino'}
+        fake_credential = {'username':'ciao', 'password':'ciao'}
         t_cred = self.client.login(**true_credential)
         f_cred = self.client.login(**fake_credential)
-
         self.assertTrue(t_cred)
         self.assertFalse(f_cred)
