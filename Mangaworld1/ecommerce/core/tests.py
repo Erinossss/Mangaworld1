@@ -20,7 +20,7 @@ class CoreCase(TestCase):
         self.credential = {'username': 'dummy', 'password': 'dummypassword'}
         self.item = Item.objects.create(nome="Nome Test",
                                         prezzo="30",
-                                        categoria="A",
+                                        categoria="S",
                                         descrizione="Descrizione Test",
                                         immagine="n",
                                         condizioni='N',
