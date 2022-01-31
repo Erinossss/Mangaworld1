@@ -81,8 +81,6 @@ class CoreCase(TestCase):
         self.assertFormError(response, 'form', 'prezzo', 'Questo campo è obbligatorio.')
         response = self.client.post('/item/' + str(self.item.id) + '/modifica/',
                                     {'nome':'mod' ,'prezzo':'50','categoria':'A','descrizione':'c','condizione':'N'})
-        self.assertRedirects(response, '/user/' + self.user.username + '/')
-        print(response)
         self.client.logout()
 
         # con utente  autenticato ma non creatore
